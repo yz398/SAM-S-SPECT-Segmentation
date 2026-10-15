@@ -8,8 +8,8 @@ from julia.AVSfldIO import fld_read, fld_write
 from prepare_dataset_zhonglin import zhonglindataloader
     
 if __name__ == "__main__":
-    loader = zhonglindataloader(datasetdir='../y90-data-wden/zhonglin/test_data.mat', delete_zeros=False)
-    result_path = '../result/test-sam-zhonglin-bbox=10-prompt=box'
+    loader = zhonglindataloader(datasetdir='..test_data.mat', delete_zeros=False)
+    result_path = '../result/test-sam-zhonglin-bbox=5-prompt=box'
     outputseg = fld_read(os.path.join(result_path, 'outputseg.fld'))
     trueseg = fld_read(os.path.join(result_path, 'trueseg.fld'))
     loader.meta['seg'] = loader.meta['seg'].permute(0,3,2,1).reshape(-1,loader.imgsize,loader.imgsize)

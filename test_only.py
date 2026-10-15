@@ -55,7 +55,7 @@ if __name__ == "__main__":
     with torch.no_grad():
         transcript.start(f'{savedir}/logfile.log', mode='a')
         print("################# START TESTING ###################")
-        test_loader = mydataloader(datasetdir='../y90-data-wden/', mode='test')
+        test_loader = mydataloader(datasetdir='..', mode='test')
         test_loader.convert_data()
         testdataset = create_dataset(images=test_loader.meta['spect'], labels=test_loader.meta['seg'])
         test(testdataset=testdataset, savedir=savedir, bbox_threshold=30)
